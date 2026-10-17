@@ -3,24 +3,199 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
+    <meta
+      name="description"
+      content="Выбор даты и времени записи в SABY Барбершоп."
+    />
+    <title>Выбор даты и времени — SABY Барбершоп</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!--
-      ЗАДАНИЕ
-      ========
-      Сверстать страницу выбора даты и времени по своему макету.
+    <div class="booking-page">
+      <header class="site-header">
+        <div class="site-header__inner">
+          <div class="site-brand" aria-label="SABY Барбершоп">
+            <span class="site-brand__accent">SABY</span>
+            <span class="site-brand__name">БАРБЕРШОП</span>
+          </div>
 
-      Пока это только вёрстка. Никакого JavaScript — ни кликов,
-      ни переходов, ни выбора дня. Всё статично.
+          <nav class="booking-steps" aria-label="Этапы записи">
+            <ol class="booking-steps__list">
+              <li class="booking-steps__step booking-steps__step--done">
+                <span class="booking-steps__bar" aria-hidden="true"></span>
+                <span class="visually-hidden">Выбор мастера — пройден</span>
+              </li>
+              <li class="booking-steps__step booking-steps__step--done">
+                <span class="booking-steps__bar" aria-hidden="true"></span>
+                <span class="visually-hidden">Выбор услуг — пройден</span>
+              </li>
+              <li class="booking-steps__step booking-steps__step--current" aria-current="step">
+                <span class="booking-steps__bar" aria-hidden="true"></span>
+                <span class="visually-hidden">Дата и время — текущий этап</span>
+              </li>
+              <li class="booking-steps__step">
+                <span class="booking-steps__bar" aria-hidden="true"></span>
+                <span class="visually-hidden">Контактные данные</span>
+              </li>
+              <li class="booking-steps__step">
+                <span class="booking-steps__bar" aria-hidden="true"></span>
+                <span class="visually-hidden">Подтверждение записи</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </header>
 
-      Стили пишите в styles.css. Разметку — здесь.
-    -->
+      <main class="booking-main">
+        <div class="booking-main__inner">
+          <div class="page-heading">
+            <button class="page-heading__back" type="button" aria-label="Назад к выбору услуг">
+              <svg class="page-heading__back-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path d="M20 8 8 20l12 12" />
+                <path d="M9 20h21c7 0 11 4 11 10s-4 10-11 10H9" />
+              </svg>
+            </button>
+            <h1 class="page-heading__title">Выберите дату и время записи</h1>
+          </div>
 
-    <div class="page">
-      <!-- Начните отсюда. Разметьте шапку, основную область
-           с календарём и слотами, подвал. -->
+          <div class="booking-panels">
+            <section class="calendar-card" aria-labelledby="calendar-title">
+              <div class="calendar-card__top">
+                <h2 class="calendar-card__title" id="calendar-title">Июнь 2025</h2>
+                <div class="calendar-card__controls">
+                  <button class="month-button" type="button" aria-label="Предыдущий месяц">
+                    <svg class="month-button__icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                      <path d="m10 4-4 4 4 4" />
+                    </svg>
+                  </button>
+                  <button class="month-button" type="button" aria-label="Следующий месяц">
+                    <svg class="month-button__icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                      <path d="m6 4 4 4-4 4" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="calendar-card__weekdays" aria-hidden="true">
+                <span class="calendar-card__weekday">Пн</span>
+                <span class="calendar-card__weekday">Вт</span>
+                <span class="calendar-card__weekday">Ср</span>
+                <span class="calendar-card__weekday">Чт</span>
+                <span class="calendar-card__weekday">Пт</span>
+                <span class="calendar-card__weekday">Сб</span>
+                <span class="calendar-card__weekday">Вс</span>
+              </div>
+
+              <div class="calendar-card__dates" role="group" aria-label="Доступные даты июня 2025 года">
+                <span class="calendar-date calendar-date--outside" aria-hidden="true">26</span>
+                <span class="calendar-date calendar-date--outside" aria-hidden="true">27</span>
+                <span class="calendar-date calendar-date--outside" aria-hidden="true">28</span>
+                <span class="calendar-date calendar-date--outside" aria-hidden="true">29</span>
+                <span class="calendar-date calendar-date--outside" aria-hidden="true">30</span>
+                <span class="calendar-date calendar-date--outside" aria-hidden="true">31</span>
+                <button class="calendar-date calendar-date--unavailable" type="button" aria-label="1 июня 2025, нет записи" disabled>1</button>
+
+                <button class="calendar-date calendar-date--available" type="button" aria-label="2 июня 2025" aria-pressed="false">2</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="3 июня 2025" aria-pressed="false">3</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="4 июня 2025" aria-pressed="false">4</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="5 июня 2025" aria-pressed="false">5</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="6 июня 2025" aria-pressed="false">6</button>
+                <button class="calendar-date calendar-date--unavailable" type="button" aria-label="7 июня 2025, нет записи" disabled>7</button>
+                <button class="calendar-date calendar-date--unavailable" type="button" aria-label="8 июня 2025, нет записи" disabled>8</button>
+
+                <button class="calendar-date calendar-date--available" type="button" aria-label="9 июня 2025" aria-pressed="false">9</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="10 июня 2025" aria-pressed="false">10</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="11 июня 2025" aria-pressed="false">11</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="12 июня 2025" aria-pressed="false">12</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="13 июня 2025" aria-pressed="false">13</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="14 июня 2025" aria-pressed="false">14</button>
+                <button class="calendar-date calendar-date--available calendar-date--selected" type="button" aria-label="15 июня 2025" aria-pressed="true">15</button>
+
+                <button class="calendar-date calendar-date--available" type="button" aria-label="16 июня 2025" aria-pressed="false">16</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="17 июня 2025" aria-pressed="false">17</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="18 июня 2025" aria-pressed="false">18</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="19 июня 2025" aria-pressed="false">19</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="20 июня 2025" aria-pressed="false">20</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="21 июня 2025" aria-pressed="false">21</button>
+                <button class="calendar-date calendar-date--available" type="button" aria-label="22 июня 2025" aria-pressed="false">22</button>
+              </div>
+            </section>
+
+            <section class="time-card" aria-labelledby="time-title">
+              <h2 class="time-card__title" id="time-title">Доступное время</h2>
+              <div class="time-card__slots" role="group" aria-label="Время записи на 15 июня">
+                <button class="time-slot" type="button" aria-pressed="false">10:00</button>
+                <button class="time-slot time-slot--busy" type="button" disabled>
+                  <span class="time-slot__hour">11:00</span>
+                  <span class="time-slot__status">Занято</span>
+                </button>
+                <button class="time-slot" type="button" aria-pressed="false">12:00</button>
+                <button class="time-slot time-slot--busy" type="button" disabled>
+                  <span class="time-slot__hour">13:00</span>
+                  <span class="time-slot__status">Занято</span>
+                </button>
+                <button class="time-slot time-slot--selected" type="button" aria-pressed="true">14:00</button>
+                <button class="time-slot" type="button" aria-pressed="false">15:00</button>
+                <button class="time-slot" type="button" aria-pressed="false">16:00</button>
+                <button class="time-slot" type="button" aria-pressed="false">17:00</button>
+              </div>
+            </section>
+          </div>
+
+          <div class="selection-bar" aria-label="Выбранная запись">
+            <div class="selection-bar__details">
+              <p class="selection-bar__label">Выбрано</p>
+              <p class="selection-bar__value">
+                <time class="selection-bar__date" datetime="2025-06-15T14:00">15 июня 2025 в 14:00</time>
+                <span class="selection-bar__master">(Мастер: Марина)</span>
+              </p>
+            </div>
+            <button class="selection-bar__button" type="button">Продолжить</button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer__inner">
+          <div class="site-footer__columns">
+            <div class="footer-brand">
+              <div class="footer-brand__logo" aria-label="SABY Барбершоп">
+                <span class="footer-brand__accent">SABY</span>
+                <span class="footer-brand__name">БАРБЕРШОП</span>
+              </div>
+              <p class="footer-brand__tagline">Мы тут стрижём!</p>
+            </div>
+
+            <section class="footer-info" aria-labelledby="contacts-title">
+              <h2 class="footer-info__heading" id="contacts-title">Контакты</h2>
+              <p class="footer-info__line">
+                <svg class="footer-info__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <path d="M10 18s6-5.3 6-10a6 6 0 0 0-12 0c0 4.7 6 10 6 10Z" />
+                  <circle cx="10" cy="8" r="2" />
+                </svg>
+                <span class="footer-info__address">г. Екатеринбург, ул. Ленина, 51</span>
+              </p>
+              <p class="footer-info__line">
+                <svg class="footer-info__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <path d="M4.1 2.5h3l1.3 4-2 1.4a12 12 0 0 0 5.7 5.7l1.4-2 4 1.3v3c0 1-.8 1.8-1.8 1.8A13.7 13.7 0 0 1 2.3 4.3c0-1 .8-1.8 1.8-1.8Z" />
+                </svg>
+                <a class="footer-info__phone" href="tel:+74951234567">+7 (495) 123-45-67</a>
+              </p>
+            </section>
+
+            <section class="footer-hours" aria-labelledby="hours-title">
+              <h2 class="footer-hours__heading" id="hours-title">Режим работы</h2>
+              <p class="footer-hours__line">Пн–Пт: 9:00 – 21:00</p>
+              <p class="footer-hours__line">Сб–Вс: 10:00 – 19:00</p>
+            </section>
+          </div>
+
+          <div class="site-footer__bottom">
+            <small class="site-footer__copyright">© 2026. Все права защищены.</small>
+            <span class="site-footer__policy">Политика конфиденциальности</span>
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
